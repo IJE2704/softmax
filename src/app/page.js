@@ -8,8 +8,9 @@ import Categories from '@/components/Categories';
 import Instructor from '@/components/Instructor';
 import Achievement from '@/components/Achievement';
 
-import Join from '@/components/Join';
+
 import Footer from '@/components/Footer';
+import Join from '@/components/Join';
 
 const HomePage = () => {
   return (
