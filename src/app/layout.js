@@ -1,5 +1,6 @@
 import { Public_Sans } from "next/font/google";
 import "./globals.css";
+import ContextProvider from "@/provider/ContextProvider";
 
 const public_Sans = Public_Sans({ subsets: ["latin"] });
 
@@ -11,7 +12,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={public_Sans.className}>{children}</body>
+      <body className={public_Sans.className}>
+        <ContextProvider>
+          {children}
+        </ContextProvider>
+        </body>
     </html>
   );
 }

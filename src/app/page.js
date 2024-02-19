@@ -1,16 +1,14 @@
-import Navbar from '@/components/Navbar';
 import Image from 'next/image';
-
 import logo from '@/assets/softmaxLogo.png';
-import Header from '@/components/Header';
-import Course from '@/components/Course';
-import Categories from '@/components/Categories';
-import Instructor from '@/components/Instructor';
-import Achievement from '@/components/Achievement';
 
-
-import Footer from '@/components/Footer';
-import Join from '@/components/Join';
+import Navbar from '@/components/landingPage/Navbar';
+import Header from '@/components/landingPage/Header';
+import Course from '@/components/landingPage/Course';
+import Categories from '@/components/landingPage/Categories';
+import Instructor from '@/components/landingPage/Instructor';
+import Achievement from '@/components/landingPage/Achievement';
+import Join from '@/components/landingPage/Join';
+import Footer from '@/components/landingPage/Footer';
 
 const HomePage = () => {
   return (
@@ -27,7 +25,7 @@ const HomePage = () => {
       </div>
       <Achievement></Achievement>
       <div className='bg-[#E9F8F3B2]'>
-        <Join></Join>
+       <Join></Join>
       </div>
       <Footer></Footer>
     </div>

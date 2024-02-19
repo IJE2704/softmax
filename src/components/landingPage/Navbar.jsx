@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import softmaxLogo from '@/assets/softmaxLogo.png';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -99,8 +100,8 @@ const Navbar = () => {
       {/* Responsive Navbar Menu (shown on mobile) */}
       
       <div className='hidden md:flex justify-center items-center '>
-        <button className='px-[24px] py-[10px] rounded hover:font-bold'>Log in</button>
-        <button className='px-[24px] py-[10px] bg-[#20B486] hover:bg-[#16674d] rounded text-white'>Register</button>
+        <Link href='/check'><button className='px-[24px] py-[10px] rounded hover:font-bold'>Log in</button></Link>
+        <Link href='/registration'><button className='px-[24px] py-[10px] bg-[#20B486] hover:bg-[#16674d] rounded text-white'>Register</button></Link>
       </div>
     </nav>
   );
