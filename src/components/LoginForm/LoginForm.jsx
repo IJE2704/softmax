@@ -11,7 +11,7 @@ import { fetchData } from "@/utilities/getuser";
 import { Context } from "@/provider/ContextProvider";
 
 const LoginForm = () => {
-  const {setUser,setToken,setStudent} = useContext(Context);
+  const {setUser,setToken,setStudent,setTokenInLocalStorage} = useContext(Context);
   const router = useRouter();
   const [formData, setFormData] = useState({
     mobile_number: "",
@@ -24,7 +24,6 @@ const LoginForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    console.log('h')
     e.preventDefault();
     try {
       const response = await fetch("https://softmaxshop.com/user/login/", {
@@ -36,7 +35,6 @@ const LoginForm = () => {
       });
       const data = await response.json();
       if (response.ok) {
-        console.log("Login successful:",);
         Swal.fire({
           title: "Congratulation!",
           text: "Successfully Login",
@@ -51,10 +49,10 @@ const LoginForm = () => {
           name:user[0].name,
           mobile_number:user[0].mobile_number
         }
-        console.log(userInfo)
+
         setStudent(userInfo);
-        console.log(user[0].name)
-        setToken(data.token.access);
+        console.log(data.token.access)
+        setTokenInLocalStorage(data.token.access);
         // Redirect to the dashboard or handle authentication token
         router.push(`/dashboard_student/${user[0].id}`);
       } else {

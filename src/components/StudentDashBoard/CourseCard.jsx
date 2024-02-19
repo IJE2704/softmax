@@ -1,11 +1,13 @@
 import { Context } from "@/provider/ContextProvider";
+import { useRouter } from "next/navigation";
 import React, { useContext } from "react";
+import Swal from "sweetalert2";
 
 const CourseCard = ({ course }) => {
-  const { user, token } = useContext(Context);
+  const router = useRouter();
+  const { user, token,student,setSelectedMenu } = useContext(Context);
   const { id, title } = course;
-  console.log(user)
-
+console.log(student);
   const handleEnroll = async () => {
     try {
       const response = await fetch("https://softmaxshop.com/user/enroll-course/", {
@@ -16,12 +18,22 @@ const CourseCard = ({ course }) => {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          student: user, // Assuming user.id is the student ID
+          student: student.id, // Assuming user.id is the student ID
           course: id, // Assuming id is the course ID
           status: "enrolled"
         })
       });
       console.log(response.status)
+      if(response.ok){
+        Swal.fire({
+          title: "Congratulation!",
+          text: `Successfully Enrolled ${title}`,
+          icon: "success",
+        });
+        setSelectedMenu("My Class")
+        router.push('/my_class')
+        
+      }
 
       if (!response.ok) {
         throw new Error("Failed to enroll in the course");

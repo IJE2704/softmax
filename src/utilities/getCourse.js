@@ -1,4 +1,5 @@
 export async function fetchCourse(token) {
+  console.log(token)
   try {
     const response = await fetch('https://softmaxshop.com/user/courses/',{
       method: "GET",

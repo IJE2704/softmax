@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import img1 from '@/assets/join.png'
+import Link from "next/link";
 
 const Join = () => {
   return (
@@ -14,9 +15,10 @@ const Join = () => {
           platform today
         </h1>
         <p>Start learning by registering for free</p>
+        <Link href='/registration'>
         <button className="px-[24px] py-[10px] bg-[#20B486] hover:bg-[#16674d] rounded text-white">
           Sign up for Free
-        </button>
+        </button></Link>
       </div>
     </div>
   );

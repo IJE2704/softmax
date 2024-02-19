@@ -17,9 +17,6 @@ const AdminForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
-    // Reset form after submission
     setFormData({
       email: "",
       password: "",

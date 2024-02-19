@@ -30,8 +30,6 @@ const RegistrationForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    
-    console.log("hello");
     e.preventDefault();
     try {
       const response = await fetch('https://softmaxshop.com/user/register/', {
@@ -42,7 +40,6 @@ const RegistrationForm = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
-      console.log(response.status)
       if (response.ok) {
         Swal.fire({
           title: "Congratulation!",
@@ -58,7 +55,6 @@ const RegistrationForm = () => {
           name:user[0].name,
           mobile_number:user[0].mobile_number
         }
-        console.log(userInfo)
         setStudent(userInfo);
         setToken(data.token.access);
         router.push(`/dashboard_student/${user[0].id}`);

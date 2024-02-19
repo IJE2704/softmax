@@ -6,7 +6,6 @@ import React, { useContext, useEffect, useState } from 'react';
 
 const Show = () => {
  
-console.log(courses);
   return (
     <div>
       <h1></h1>

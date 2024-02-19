@@ -10,25 +10,7 @@ import { PiStudent } from "react-icons/pi";
 
 const Page = ({ params }) => {
   const { setUser, setStudent,user,token,setCourses,courses} = useContext(Context);
-
-  
-
-  console.log(user)
-  console.log(token)
-useEffect(()=>{
-  const fetchCourses = async () => {
-    try {
-      const fetchedCourses = await fetchCourse(token);
-      setCourses(fetchedCourses);
-    } catch (error) {
-      console.error('Error fetching courses:', error);
-    }
-  };
-
-  fetchCourses()
-},[token])
   setUser(params.studentid);
-  console.log(courses);
   return (
     <div className="mt-10">
       <div className="flex justify-around items-center">
