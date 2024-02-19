@@ -1,6 +1,6 @@
 "use client"
 
-import logo from '@/assets/softmaxlogo.png'
+import logo from '@/assets/softmaxLogo.png'
 import Image from 'next/image';
 import { useContext, useState } from 'react';
 import { RiDashboardFill } from "react-icons/ri";
